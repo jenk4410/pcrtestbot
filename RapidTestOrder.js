@@ -10,11 +10,18 @@ class RapidTestOrder {
       },
        SIZE: () => {
         let aReturn = [];
-        this.stateCur = this.OrderState.RESERVING;
+        this.stateCur = this.OrderState.CAKE;
         aReturn.push("What toppings would you like? ");
-        aReturn.push("We have pepperoni or veggie");
+        aReturn.push("We have Pepperoni or Veggie.");
         return aReturn;
       },
+      CAKE: () => {
+       let aReturn = [];
+       this.stateCur = this.OrderState.RESERVING;
+       aReturn.push("Thank you for your Order at Party Pizza!");
+       aReturn.push("Would you like to order our new Chocolate Cake?!");
+       return aReturn;
+     },
       RESERVING: (sInput) => {
         let aReturn = [];
         this.isDone = true;
